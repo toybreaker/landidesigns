@@ -1,0 +1,173 @@
+//home
+.form_row {
+  padding-top: $vertical-space;
+  .content {
+    padding-left: $vertical-space-small;
+    padding-right: $vertical-space-small;
+    @include media( "screen", ">bp1Width") {
+      padding-left: $vertical-space;
+      padding-right: $vertical-space;
+    }
+
+  }
+}
+
+
+
+.form_block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @include media( "screen", ">minWidth") {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+  }
+
+  .form_title  {
+    display: block;
+    margin-left: 0;
+    margin-bottom: $vertical-space-small;
+    padding: 0;
+    @include media( "screen", ">minWidth") {
+      display: inline-block;
+    }
+  }
+
+  form {
+    padding: 8px;
+    display: block;
+    width: auto;
+    margin-left: 0;
+    border: 1px solid black;
+    margin-bottom: $vertical-space-small;
+    @include media( "screen", ">minWidth") {
+      display: inline-block;
+      margin-left: $vertical-space-small;
+    }
+  }
+
+  select {
+    border: 0 none;
+    font-size: 20px;
+    background-color: transparent;
+    text-align: center!important;
+    option {
+      text-align: center!important;
+    }
+  }
+}
+
+
+.backplate_chooser {
+  margin-top: $vertical-space/2;
+  .form_block {
+    flex-direction: column;
+    justify-content: flex-start;
+    @include media( "screen", ">maxWidth") {
+      flex-direction: row;
+    }
+  }
+  form {
+    margin-left: 0;
+  }
+}
+
+
+//contact page
+.contact {
+  .form {
+    padding-top: $vertical-space;
+  }
+  .side_padded {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .red {
+    margin: 0 auto;
+    color: red;
+  }
+}
+
+
+.contact_form {
+  text-align: center;
+  @media all and (min-width: 700px) {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  select, textarea, input {
+    border: 1px solid $hr_color;
+    margin-top: $vertical-space-small;
+    font-size: 15px;
+    height: 30px;
+    min-width: 100%;
+    text-align: center;
+    @media all and (min-width: 700px) {
+      margin-top: 0;
+      min-width: 100px;
+      width: 350px;
+      text-align: left;
+    }
+  }
+  textarea {
+    margin-top: $vertical-space-small;
+    height: 90px;
+  }
+
+  select {
+    background-color: white;
+    border-radius: 0;
+    border: 1px solid $hr_color;
+  }
+  input[type="submit"] {
+    margin-top: $vertical-space-small;
+    border: 0 none;
+    height: 54px;
+    text-align: center;
+    font-size: 1.3rem;
+    line-height: 1;
+    padding: $vertical-space-small;
+    background-color: $brand_blue;
+    color: white;
+  }
+  label {
+    padding-top: $vertical-space-small;
+    display: block;
+    width: 100%;
+    @media all and (min-width: 700px) {
+      display: inline-block;
+      min-width: 160px;
+      width: 160px;
+    }
+  }
+  label[for="message"] {
+    @media all and (min-width: 700px) {
+      position: relative;
+      top: -70px;
+    }
+  }
+  .right {
+    text-align: right;
+  }
+  .showmap {
+    padding-bottom: 0;
+  }
+}
+
+.underline {
+  cursor: pointer;
+  border-bottom: 1px solid black;
+  &:hover {
+    opacity: .75;
+  }
+}
+
+.currencymap {
+  padding-top: 1rem;
+  width: 100%;
+  height: 250px;
+}

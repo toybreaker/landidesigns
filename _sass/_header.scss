@@ -1,0 +1,163 @@
+.header {
+  background-color: white;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+      flex-direction: column;
+  @include media( "screen", ">bp1Width") {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+        flex-direction: row;
+    -webkit-box-align: end;
+            -ms-flex-align: end;
+        align-items: flex-end;
+    -webkit-box-pack: center;
+            -ms-flex-pack: center;
+        justify-content: center;
+    padding: 12px 0;
+    .container {
+      margin: 0;
+    }
+  }
+
+  &.no_underline {
+    border: 0 none!important;
+    text-decoration: none;
+  }
+
+  .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+        flex-direction: column;
+    -webkit-box-align: center;
+            -ms-flex-align: center;
+        align-items: center;
+    padding: 0;
+  }
+
+  .header__logo a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+            -ms-flex-align: center;
+        align-items: center;
+    -webkit-box-pack: center;
+            -ms-flex-pack: center;
+        justify-content: center;
+    @include media( "screen", ">bp1Width") {
+      width: 300px;
+    }
+  }
+
+  .liquideye_logo {/*svg*/
+    padding-top: 10px;
+    height: 120px;
+  }
+
+  .claim {
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    padding-left: $vertical-space-small;
+    padding-right: $vertical-space-small;
+    padding-bottom: $vertical-space-small;
+    text-align: center;
+    @include media( "screen", ">minWidth") {
+      text-align: center;
+
+    }
+    @include media( "screen", ">bp1Width") {
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 52px;
+      padding-bottom: 0;
+    }
+  }
+}
+
+
+.menu {
+  background-color: $menu_bg_color;
+  display: block;
+  padding-top: $vertical-space-small;
+  padding-bottom: 6px;
+  margin-bottom: 0;
+  width: 100%;
+  text-align: center;
+  @include media( "screen", ">minWidth") {
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+  }
+  @include media( "screen", ">bp1Width"){
+    background-color: white;
+    margin: 0;
+    width: auto;
+  }
+
+  li {
+    display: inline;
+    a {
+      font-size: 18px;
+      min-height: 22px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      display: block;
+      color: black;
+      line-height: 1;
+      white-space: nowrap;
+      text-align: center;
+      @include media( "screen", ">minWidth"){
+        margin-left: $vertical-space-small/2;
+        margin-right: $vertical-space-small/2;
+      }
+      .span {border-bottom: 2px solid transparent;}
+    }
+    a.active span,
+    a:hover span{
+      border-bottom: 2px solid lighten($link-color, 10%);
+    }
+    a:visited {
+      color: lighten($link-color, 30%)!important;
+    }
+  }
+}
+
+/*page fat headers*/
+.fat_headers_block {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  .housings &,
+  .testimonials & {
+    padding-bottom: 2rem;
+    @include media( "screen", ">minWidth") {
+      padding-bottom: 2.5rem;
+    }
+  }
+  h1, h2, h3, h4 {
+    padding-top: .35rem;
+    padding-bottom: .35rem;
+  }
+}

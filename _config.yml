@@ -1,0 +1,28 @@
+title: Landi Designs
+email: office.landidesigns@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Italian designer Alessandro Landi, provides architecture, interiors, landscaping and lighting services for residential and commercial projects in Bali, South East Asia and Turks&amp;Caicos, Carribean Islands.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://landi-designs.com" # the base hostname & protocol for your site, e.g. http://example.com
+preview_image: preview_image.jpg
+version: 0.0.1
+
+github_url: "https://toybreaker.github.io/landidesigns"
+github_username:  toybreaker
+repository: toybreaker/landidesigns
+
+google:
+  analytics: UA-4157647-1
+  verification: Rt71Q1qGvbUviohh6n8KmtRoGUd-XeuuuKLBjCMvHO8
+
+# Build settings
+markdown: kramdown
+gems:
+ - jekyll-mentions
+ - jekyll-redirect-from
+ - jekyll-sitemap
+ - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+permalink: pretty

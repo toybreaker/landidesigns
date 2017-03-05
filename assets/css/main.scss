@@ -1,0 +1,43 @@
+---
+sitemap: false
+---
+
+$body_color           : #fff;
+$black                : #161616;
+$link_color           : #000;
+$underline_link_color : #b4e7f8;
+
+$brand_blue           : #33a0ff;//rgba(51, 160, 255, 1), hsla(208, 100%, 60%, 1)
+$brand_yellow         : #fff200;
+$menu_bg_color        : lighten( $brand_blue, 33%); //#dbeeff
+$body_bg_color        : lighten( $brand_blue, 30%); //#cce7ff
+$hr_color             : rgb(214, 214, 214); //#d6d6d6
+
+$base-font: caption;
+$base-font-size-tiny: 15px;
+$base-font-size-min: 16px;
+$base-font-size-bp1: 17px;
+$base-font-size-max: 18px;
+$base-line-height: 1.4446;
+
+$border-radius: 5px;
+$vertical-space: 2.5rem;
+$vertical-space-small: 1rem;
+
+$mediaMinWidth: 480px;
+$mediaBp1Width: 800px;
+$mediaMaxWidth: 1260px;
+
+
+@import "cmq";
+@import "base";
+@import "pages";
+@import "header";
+@import "slideshow";
+@import "thumbs";
+@import "instagram";
+@import "youtube";
+@import "products";
+@import "footer";
+@import "forms";
+@import "svg";

@@ -1,0 +1,447 @@
+em { color: lighten($black, 30%);}
+
+.home {
+  h1, h2, h3, h4 {
+    text-align: center;
+  }
+  h1 {
+    padding-top: 0;
+    padding-bottom: $vertical-space;
+  }
+  h3 {
+    padding-bottom: $vertical-space-small;
+  }
+}
+
+.home,
+.team,
+.page {
+  .content {
+    border-top: 0 none;
+  }
+}
+
+.team_row {
+  background-color: $menu_bg_color;
+}
+.team_balls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  @include media( "screen", ">minWidth") {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .photographer_name {/*h4*/
+    font-size: 16px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 14px;
+    span {
+      padding-bottom: 3px;
+      border-bottom: 1px solid transparent;
+    }
+  }
+  .photographer_face {
+    // border: 0 none;
+    height: 90px;
+    width: 90px;
+    min-height: 90px;
+    min-width: 90px;
+    margin: $vertical-space-small/8;
+    @include media( "screen", ">minWidth") {
+      height: 140px;
+      width: 140px;
+      min-height: 140px;
+      min-width: 140px;
+      margin: $vertical-space-small/2;
+    }
+
+
+  }
+}
+
+.team .photographer,
+.about .photographer  {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+      flex-direction: column;
+  -webkit-box-align: center;
+          -ms-flex-align: center;
+      align-items: center;
+  margin-bottom: $vertical-space;
+  @media all and (min-width: 660px) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+        flex-direction: row;
+  }
+}
+.team a:hover .photographer_face,
+.team_balls a:hover .photographer_face,
+.team_balls a:hover .photographer_name span {
+  border-color: $brand_blue;
+}
+.team_photographer .photographer {
+  @media all and (min-width: 660px) {
+    -webkit-box-align: start;
+            -ms-flex-align: start;
+        align-items: flex-start;
+  }
+}
+.photographer_face {
+  border: 3px solid transparent;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  min-height: 200px;
+  min-width: 200px;
+  overflow: hidden;
+  margin-top: $vertical-space;
+  @media all and (min-width: 660px) {
+    margin-right: $vertical-space;
+    margin-bottom: $vertical-space;
+    .team &  {
+      margin-bottom: 0;
+    }
+  }
+  .about & {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  @media all and (min-width: 660px) {
+      -ms-flex-item-align: start;
+    align-self: flex-start;
+    margin-top: 0;
+    }
+  }
+  .team_photographer & {
+    border: 0 none;
+    height: 250px;
+    width: 250px;
+    min-height: 250px;
+    min-width: 250px;
+  }
+
+}
+.photographer_name, .testimonial_name {
+  text-transform: capitalize;
+  margin-top: 0;
+  text-align: center;
+  width: 100%;
+  span {
+    padding-bottom: 3px;
+    border-bottom: 1px solid transparent;
+  }
+  @media all and (min-width: 660px) {
+    text-align: left;
+  }
+
+}
+.team a:hover .photographer_name span  {
+  border-color: $brand_blue;
+}
+
+
+.photographer_text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+      flex-direction: column;
+  -webkit-box-align: start;
+          -ms-flex-align: start;
+      align-items: flex-start;
+}
+.photographer_quote, .photographer_intro {
+  margin-left: 0;
+  margin-right: 0;
+}
+.photographer_quote {
+  padding-top: $vertical-space;
+  font-size: 120%;
+}
+.photographer_quote,
+.testimonial_quote {
+  font-style: italic;
+}
+.photographer_quote:before,
+.testimonial_quote:before {
+  content: open-quote;
+  font-size: 300%;
+  line-height: 1px!important;
+  display: inline;
+  position: relative;
+  top: 22px;
+  padding-right: 1rem;
+  color: lighten($black, 60%);
+  .team a:hover & {
+    color: $brand_blue;
+  }
+}
+.photographer_quote:after,
+.testimonial_quote:after {
+  content: close-quote;
+  font-size: 300%;
+  line-height: 1px!important;
+  display: inline-block;
+  position: relative;
+  top: 22px;
+  padding-left: .5rem;
+  color: lighten($black, 60%);
+  .team a:hover & {
+    color: $brand_blue;
+  }
+}
+
+.testimonial {
+  margin-bottom: $vertical-space;
+  @include media( "screen", ">minWidth"){
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  @include media( "screen", ">bp1Width"){
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+}
+
+.testimonial_intro > * {
+  text-align: center;
+  margin-bottom: $vertical-space;
+}
+
+.testimonial_header {
+  padding-bottom: $vertical-space-small;
+  @include media( "screen", ">minWidth", "<bp1Width"){
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+            -ms-flex-align: center;
+        align-items: center;
+  }
+  @include media( "screen", ">bp1Width"){
+    min-width: 200px;
+    max-width: 200px;
+  }
+}
+
+.testimonial_name {/*h2*/
+  width: auto;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 4px;
+}
+
+.testimonial_photo {
+  margin-bottom: $vertical-space-small;
+  @include media( "screen", ">minWidth", "<bp1Width") {
+    min-width: 220px;
+    max-width: 220px;
+    padding-right: $vertical-space-small;
+  }
+  @include media( "screen", ">bp1Width"){
+    min-width: 300px;
+    max-width: 300px;
+    margin-left: $vertical-space-small;
+    margin-right: $vertical-space-small;
+  }
+}
+.testimonial_contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+      flex-direction: row;
+  -webkit-box-pack: center;
+          -ms-flex-pack: center;
+      justify-content: center;
+  @include media( "screen", ">bp1Width"){
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+        flex-direction: column;
+  }
+}
+
+.testimonial_website,
+.testimonial_instagram,
+.testimonial_email {
+  margin-left: $vertical-space-small/2;
+  margin-right: $vertical-space-small/2;
+  @include media( "screen", ">bp1Width"){
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.testimonial_quote {
+  @include media( "screen", ">minWidth", "<bp1Width") {
+    width: calc(100% - 250px);
+  }
+}
+
+.box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.ratings,
+.events_call .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  @include media( "screen", ">bp1Width") {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+        flex-direction: row;
+  }
+}
+
+.small {
+  padding: .25rem;
+}
+
+.us {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.left {
+  padding-right: 1rem;
+  padding-right: 0;
+  @include media( "screen", ">bp1Width") {
+    padding-right: 1rem;
+  }
+}
+.right {
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+      order: 2;
+  padding-left: 0;
+  @include media( "screen", ">bp1Width") {
+    padding-left: 1rem;
+  }
+}
+
+.flex {
+  width: 100%;
+  img { width: 100%; }
+  @include media( "screen", ">bp1Width") {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack:justify;
+    -ms-flex-pack:justify;
+        justify-content:space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+    p {
+      max-width: 50%;
+    }
+  }
+}
+
+.social_links {
+  .flex a {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    border: 0 none;
+    opacity: 1;
+    &:hover { opacity: .7; }
+  }
+  p {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+
+.teammember_photos {
+  figure {position: relative;}
+  figcaption {
+    font-size: 13px;
+    position: absolute;
+    right: 5%;
+    bottom: $vertical-space-small;
+    text-transform: capitalize;
+    color: white;
+  }
+
+}
+
+.cameras_row {
+  display: flex;
+  flex-direction: column;
+  @include media( "screen", ">bp1Width") {
+    flex-direction: row;
+    flex-wrap: wrap;
+    .content {
+      display: flex;
+      flex-direction: column;
+      width: 49%;
+    }
+  }
+  @include media( "screen", ">maxWidth") {
+    .content {
+      width: 24%;
+    }
+  }
+  .text {
+    padding-left: $vertical-space-small/2;
+    padding-right: $vertical-space-small/2;
+  }
+}
