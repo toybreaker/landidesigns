@@ -30,6 +30,7 @@ $mediaMaxWidth: 1260px;
 
 
 @import "cmq";
-@import "styles";
+@import "normalize";
 @import "jquery_jscrollpane";
 @import "jquery_vegas";
+@import "styles";
