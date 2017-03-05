@@ -1,0 +1,134 @@
+<script type="text/javascript">
+
+  //TABS INIT
+  $(document).ready(function() {
+
+
+    //Get all the LI from the #tabMenu UL
+    $('#menu li.tab').click(function(){
+
+      //perform the actions when it's not selected
+      if (!$(this).hasClass('current_page')) {
+
+  	    //remove the selected class from all LI
+  	    $('#menu li.tab').removeClass('current_page');
+
+  	    //Reassign the LI
+  	    $(this).addClass('current_page');
+
+  	    //Hide all the DIV in .boxBody
+  	    $('.boxBody div.parent').slideUp('1500');
+
+  	    //Look for the right DIV in boxBody according to the Navigation UL index, therefore, the arrangement is very important.
+  	    $('.boxBody div.parent:eq(' + $('#menu > li.tab').index(this) + ')').slideDown('1500');
+
+  	}
+
+      }).mouseover(function() {
+
+      //Add and remove class, Personally I dont think this is the right way to do it, anyone please suggest
+      $(this).addClass('mouseover');
+      $(this).removeClass('mouseout');
+
+      }).mouseout(function() {
+
+      //Add and remove class
+      $(this).addClass('mouseout');
+      $(this).removeClass('mouseover');
+
+      });
+
+
+
+  });
+
+
+
+
+
+
+  //photo gallery stuff
+  $( function() {
+      var pictures = [],
+          $thumbnails = $( '#thumbnails' ),
+          $title = $( '#title' ),
+          $pause = $( '#pause' ),
+          $flash = $( '#flash' ),
+          $volume = $( '#volume' );
+
+
+      // jScrollPane
+      $thumbnails.find( 'ul' ).width( function() {
+          var totalWidth = 0;
+          $( this ).find( 'li' ).each( function() {
+              totalWidth += $( this ).outerWidth( true );
+          });
+          return totalWidth;
+      });
+
+      $thumbnails.jScrollPane();
+
+      var jScrollPaneApi = $thumbnails.data( 'jsp' );
+
+      $( window ).bind( 'resize', function() {
+          jScrollPaneApi.reinitialise();
+      });
+
+      // Vegas Background
+
+      $thumbnails.find( 'a' ).each( function() {
+          pictures.push({
+              src: $( this ).attr( 'href' ),
+              title: $( this ).find( 'img' ).attr( 'title' ),
+              valign: $( this ).find( 'img' ).data( 'valign' ),
+              fade: 2500
+          });
+      })
+
+      $.vegas( 'slideshow', {
+          backgrounds: pictures,
+          delay: 12000
+       });
+
+
+      $( 'body' ).bind( 'vegasload', function( e, img ) {
+          var src = $( img ).attr( 'src' ),
+              idx = $( 'a[href="' + src + '"]' ).parent( 'li' ).index();
+
+
+          $title.fadeOut( function() {
+              $( this ).find( 'h1' ).text( pictures[ idx ].title );
+              $( this ).fadeIn( 1000 );
+          });
+
+          // $flash.show().fadeOut( 2000 );
+
+      });
+
+
+      // Photograph & Pause
+      $( '#pause_off' ).click( function() {
+          $pause.show();
+          $.vegas('pause');
+      });
+
+      $pause.click( function() {
+          $pause.hide();
+      			$.vegas( 'slideshow' );
+          return false;
+      });
+
+
+      // prev & next
+      $('#next').click(function(){
+      	$.vegas('next');
+      });
+
+      $('#previous').click(function(){
+      	$.vegas('previous');
+      });
+
+
+  });
+
+</script>

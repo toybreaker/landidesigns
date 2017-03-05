@@ -30,14 +30,6 @@ $mediaMaxWidth: 1260px;
 
 
 @import "cmq";
-@import "base";
-@import "pages";
-@import "header";
-@import "slideshow";
-@import "thumbs";
-@import "instagram";
-@import "youtube";
-@import "products";
-@import "footer";
-@import "forms";
-@import "svg";
+@import "styles";
+@import "jquery_jscrollpane";
+@import "jquery_vegas";
