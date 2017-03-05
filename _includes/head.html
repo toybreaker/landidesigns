@@ -1,0 +1,19 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{ site.title_long | escape }} • {{ page.title | upcase }}{% else %}{{ site.title_long | escape }}{% endif %}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description}}{% else %}{{ site.description }}{% endif %}">
+  {% if page.keywords %}<meta name="keywords" content="{{ page.keywords}}">{% endif %}
+
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+  <meta name="google-site-verification" content="{{ site.google.verification }}" />
+
+
+  {% include favico.html %}
+
+  {% include open_graph.html %}
+
+</head>
